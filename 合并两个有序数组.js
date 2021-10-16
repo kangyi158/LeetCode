@@ -8,6 +8,17 @@
 // };
 
 // 方法二：从前往后遍历比较
+// var merge = function (nums1, m, nums2, n) {
+//     nums1.length = m
+//     var arr = []
+//     var i = 0, j = 0, k = 0;
+//     while (i < m || j < n) {
+//         arr[k++] = nums1[i] < nums2[j] ? nums1[i++] : nums2[j++]
+//     }
+//     if (i < m) arr.push(...nums1.slice(m, n))
+//     else arr.push(...nums2.slice(n, m))
+//     return arr
+// }
 var merge = function (nums1, m, nums2, n) {
     nums1.length = m
     var arr = []
@@ -17,6 +28,7 @@ var merge = function (nums1, m, nums2, n) {
     }
     if (i < m) arr.push(...nums1.slice(m, n))
     else arr.push(...nums2.slice(n, m))
-    return arr
+    nums1 = arr
+    console.log(nums1);
 }
-console.log(merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3));
+merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3)
